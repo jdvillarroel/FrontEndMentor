@@ -1,0 +1,277 @@
+/*
+    Author: Jesus David Villarroel
+    Date:
+
+    Project: Social Proof Section Challenge
+    Front End Mentor - https://www.frontendmentor.io/
+*/
+
+:root {
+    /* Colors */
+    --very-dark-magenta: hsl(300, 43%, 22%);
+    --soft-pink: hsl(333, 80%, 67%);
+    --dark--grayish-magenta: hsl(303, 10%, 53%);
+    --light-grayish-magenta: hsl(300, 24%, 96%);
+    --white: hsl(0, 0%, 100%);
+
+    /* Default font size */
+    --default-font-size: 15px;
+}
+
+body, html {
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Spartan', sans-serif;
+}
+
+.bg-1 {
+    background: url(../images/bg-pattern-top-desktop.svg) no-repeat;
+    height: 80%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 80%;
+    z-index: -1;
+}
+
+.bg-2 {
+    background: url(../images/bg-pattern-bottom-desktop.svg) no-repeat;
+    bottom: 0;
+    height: 70%;
+    position: absolute;
+    right: 0;
+    width: 70%;
+    z-index: -2;
+}
+
+.grid-container {
+    display: grid;
+    padding: 8% 10%;
+    grid-template-rows: 1.7fr 2.1fr 0.2fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "headline       rates"
+    "cards          cards"
+    "attribution    attribution";
+}
+
+/************************* Headline Section ********************************/
+.headline-box {
+    grid-area: headline;
+}
+
+.headline {
+    color: var(--very-dark-magenta);
+    font-weight: bolder;
+    font-size: 2.8rem;
+    padding: 0 33% 0 0;
+    margin: 0 0 1rem 0;
+}
+
+.p-heading {
+    color: var(--dark--grayish-magenta);
+    padding: 0 16% 0 0;
+}
+
+/************************* Rates Section **********************************/
+.rates-box {
+    grid-area: rates;
+}
+
+.rates-list {
+    margin: 0;
+    padding: 0;
+}
+
+.stars-container {
+    display: inline-block;
+    align-items: center;
+    margin-top: 0.5rem;
+    margin-left: 2rem;
+}
+
+.stars {
+    margin: 0 1.5px;
+}
+
+.rate-paragraph {
+    display: inline-block;
+    margin: 0.75rem 0.2rem 0.75rem 1.5rem;
+    font-size: 14px;
+}
+
+.rate-1, .rate-2, .rate-3 {
+    color: var(--very-dark-magenta);
+    font-weight: 700;
+    background-color: var(--light-grayish-magenta);
+    list-style-type: none;
+    margin-top: 3%;
+    border-radius: 10px;
+    width: 80%;
+    padding: 0.4rem 0;
+}
+
+.rate-2 {
+    margin-left: 10%;
+}
+
+.rate-3 {
+    margin-left: 20%;
+}
+
+
+/************************* Cards Section ***********************************/
+.cards-box {
+    grid-area: cards;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+}
+
+.card-1, .card-2, .card-3 {
+    display: inline-block;
+    background-color: var(--very-dark-magenta);
+    margin: 0 1rem 1rem 1rem;
+    color: var(--white);
+    border-radius: 10px;
+    font-size: 0.8rem;
+    line-height: 2;
+    padding: 1rem 0;
+}
+
+.card-2 {
+    margin-top: 5%;
+}
+
+.card-3 {
+    margin-top: 10%;
+}
+
+.card-header {
+    padding-top: 1rem;
+}
+
+.user-pic {
+    float: left;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 0 2rem;
+}
+
+.user-name {
+    margin: 0;
+    font-weight: 600;
+}
+
+.user-type {
+    margin: 0;
+    color: var(--soft-pink);
+}
+
+.card-body {
+    margin: 1.8rem 1rem 1rem 1rem;
+}
+
+.user-review {
+    margin: 1rem;
+}
+
+
+/****************************** Attribution Section ***********************************/
+.attribution {
+    grid-area: attribution;
+    font-size: 11px;
+    text-align: center;
+    vertical-align: bottom;
+    margin-top: 1rem;
+  }
+  .attribution a {
+    color: hsl(228, 45%, 44%);
+  }
+
+/***************************** Breakpoints *******************************************/
+  @media only screen and (max-width: 1300px) {
+    .rate-1, .rate-2, .rate-3 {
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .stars {
+        margin: 0 auto;
+    }
+
+    .stars-container {
+        display: block;
+        align-items: center;
+        margin: 0.75rem auto 0.35rem;
+    }
+    
+    .rate-paragraph {
+        display: block;
+        margin: 0.35rem auto 0.75rem;
+        font-size: 14px;
+    }
+  }
+
+  @media only screen and (max-width: 860px) {
+    .grid-container {
+        display: grid;
+        padding: 5%;
+        grid-template-rows: auto auto auto auto;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "headline"
+        "rates"
+        "cards"
+        "attribution";
+    }
+
+    .headline-box {
+        text-align: center;
+    }
+
+    .headline {
+        padding: 0;
+        margin: 5% 5%;
+    }
+
+    .p-heading {
+        padding: 0;
+        margin: 5% 5%;
+    }
+
+    .rate-1, .rate-2, .rate-3 {
+        margin: 5% auto;
+    }
+
+    .cards-box {
+        margin: 5%;
+        display: block;
+    }
+
+    .card-1, .card-2, .card-3 {
+        display: block;
+        margin: 2rem 0;
+        padding: 5%;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .bg-1 {
+        background: url(../images/bg-pattern-top-mobile.svg) no-repeat;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+    }
+    
+    .bg-2 {
+        display: none;
+    }
+}
