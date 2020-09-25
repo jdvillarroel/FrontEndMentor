@@ -146,10 +146,13 @@ h3, p {
     background-image: url(../images/icon-share-white.svg);
     background-repeat: no-repeat;
     background-position: center;
+    
 }
 
 .btn-container:hover .tooltip {
     visibility: visible;
+    animation-name: tooltipIn;
+    animation-duration: 0.7s;
 }
 
 /*
@@ -304,5 +307,14 @@ h3, p {
 
     .tooltip::after {
         border: none;
+    }
+}
+
+@keyframes tooltipIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }
