@@ -1,0 +1,308 @@
+/*
+    Author: Jesus David Villarroel
+
+    Front End Mentor Challenge: Article Preview Component
+
+*/
+
+:root {
+    --very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --desaturated-darkblue: hsl(214, 17%, 51%);
+    --grayish-blue: hsl(212, 23%, 69%);
+    --light-grayish-blue: hsl(210, 46%, 95%);
+    --my-font-size: 13px;
+    --my-font-weight-1: 500;
+    --my-font-weight-2: 700;
+}
+
+html, body {
+    background-color: var(--light-grayish-blue);
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Manrope', sans-serif;
+    font-size: var(--my-font-size);
+}
+
+h3, p {
+    margin: 0;
+}
+
+.main-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*************************** Card Section *********************************/
+.card {
+    padding: 0;
+    background-color: white;
+    border-radius: 10px;
+    height: 280px;
+    width: 730px;
+    display: flex;
+    align-items: stretch;
+}
+
+/*************************** Card Image Section ***************************/
+.card-img {
+    background-color: rgb(240, 240, 240);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    display: inline-block;
+    width: 285px;
+    height: 280px;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.card-img img {
+    width: 285px;
+    height: 280px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    
+}
+
+/*************************** Card Content Section **************************/
+.card-content-wrapper {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin: 0;
+    padding: 30px 50px 30px;
+    display: inline-block;
+    /*flex-direction: column;
+    justify-content: center;*/
+}
+
+/*************************** Card Body Section *****************************/
+.card-body {
+    margin-bottom: 20px;
+}
+
+.card-body h3 {
+    color: var(--very-dark-grayish-blue);
+    font-size: 1.5rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.card-body p {
+    color: var(--desaturated-darkblue);
+    line-height: 1.5;
+}
+
+/*************************** Card Footer Section ****************************/
+.card-footer {
+    display: flex;
+}
+
+/*************************** Avatar Section *********************************/
+.avatar-container {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.avatar-container img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+/*************************** Person Section *********************************/
+.person {
+    display: inline-block;
+    margin-right: 140px;
+}
+
+.person p {
+    color: var(--very-dark-grayish-blue);
+    font-weight: var(--my-font-weight-2);
+    margin-bottom: 5px;
+}
+
+.person span {
+    color: var(--grayish-blue);
+}
+
+/*************************** Button Section *********************************/
+.btn-container {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background-color: var(--light-grayish-blue);
+    border-radius: 50%;
+    background-image: url(../images/icon-share.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+}
+
+.btn-container:hover {
+    background-color: var(--desaturated-darkblue);
+    background-image: url(../images/icon-share-white.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.btn-container:hover .tooltip {
+    visibility: visible;
+}
+
+/*
+    This buttom will simulate the change of color when hover over the buttom
+    in small screen devices. It has the same code as the btn-container with the
+    colors as :hover, but it is not displayed. It will be shown only when
+    the break point is reached and hover over the btn-container.
+*/
+.fake-btn {
+    display: none;
+    width: 32px;
+    height: 32px;
+    background-color: var(--desaturated-darkblue);
+    border-radius: 50%;
+    background-image: url(../images/icon-share-white.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+}
+
+/*************************** Tooltip Section *********************************/
+.tooltip {
+    background-color: var(--very-dark-grayish-blue);
+    border-radius: 10px;
+    width: 248px;
+    height: 55px;
+    visibility: hidden;
+    position: absolute;
+    bottom: 160%;
+    left: 50%;
+    margin-left: -124px; /*width / 2 = margin-left*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tooltip span {
+    color: var(--grayish-blue);
+    letter-spacing: 0.5rem;
+}
+
+.tooltip a {
+    margin: 0 0.5rem;
+}
+
+.tooltip::after {
+    content: " ";
+    position: absolute;
+    top: 100%; /* At the bottom of the tooltip */
+    left: 50%;
+    margin-left: -10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: var(--very-dark-grayish-blue) transparent transparent transparent;
+}
+
+/*************************** Breakpoint Section *******************************/
+@media only screen and (max-width: 835px) {
+/*************************** Card Section *********************************/
+    .card {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        height: 513px;
+        width: 327px;
+        display: flex;
+        flex-direction: column;
+    }
+
+/*************************** Card Image Section ***************************/
+    .card-img {
+        background-color: rgb(240, 240, 240);
+        border-radius: 0;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+
+        width: 327px;
+        height: 200px;
+        margin: 0;
+        padding: 0;
+        border: none;
+        display: block;
+    }
+
+    .card-img img {
+        width: 327px;
+        height: 200px;
+        border-radius: 0;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;       
+    }
+
+/*************************** Card Content Section **************************/
+    .card-content-wrapper {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        margin: 40px 0 0 0;
+        padding: 0 30px;
+    }
+
+    .card-body h3 {
+        font-size: 1.3rem; 
+    }
+
+    .card-body p {
+        line-height: 1.7;
+    }
+
+/*************************** Card Footer Section ****************************/
+    .card-footer {
+        margin-top: 35px;
+    }
+
+/*************************** Person Section *********************************/
+    .person {
+        margin-right: 55px;
+    }
+
+/*************************** Button Section *********************************/
+    .btn-container:hover .fake-btn {
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+        background-color: var(--desaturated-darkblue);
+        border-radius: 50%;
+        background-image: url(../images/icon-share-white.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-left: 55px;
+    }
+
+/*************************** Tooltip Section *********************************/
+    .tooltip {
+        border-radius: 0;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        width: 327px;
+        height: 88px;
+        position: absolute;
+        bottom: -28px;
+        left: 0;
+        margin-left: -254px;
+        justify-content: left;
+    }
+
+    .tooltip span {
+        margin-left: 2rem;
+    }
+
+    .tooltip a {
+        margin: 0 0.5rem;
+    }
+
+    .tooltip::after {
+        border: none;
+    }
+}
