@@ -1,0 +1,205 @@
+@import "config";
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient($soft-violet, $soft-blue) no-repeat;
+    font-family: $font-family-stack;
+    font-size: $default-font-size;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 95% 5%;
+    align-items: center;
+    justify-items: center;
+}
+
+.container {
+    background-color: white;
+    width: 920px;
+    min-height: 510px;
+    // height: 510px;
+    border-radius: $border-radius;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
+
+    @include mobile-view($breakpoint) {
+        grid-template-columns: 1fr;
+        grid-template-rows: 85px 1fr;
+        width: 90%;
+        margin-top: 60px;
+    }
+}
+
+#illustration-section {
+    position: relative;
+}
+
+.illustration-container {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+
+    @include mobile-view($breakpoint) {
+        overflow: visible;
+    }
+}
+
+#illustration-bg-desktop {
+    position: absolute;
+    left: -123%;
+    top: -60%;
+
+    @include mobile-view($breakpoint) {
+        display: none;
+    }
+}
+
+#illustration-desktop {
+    position: absolute;
+    top: 50%;
+    left: -17%;
+    transform: translateY(-50%);
+
+    @include mobile-view($breakpoint) {
+        display: none;
+    }
+}
+
+#illustration-bg-mobile {
+    display: none;
+
+    @include mobile-view($breakpoint) {
+        display: inline-block;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+#illustration-mobile {
+    display: none;
+
+    @include mobile-view($breakpoint) {
+        display: inline-block;
+        position: absolute;
+        top: -120%;
+        left: 40%;
+        transform: translateX(-40%);
+    }
+}
+
+#illustration-box-desktop {
+    position: absolute;
+    top: 41%;
+    left: -20%;
+
+    @include mobile-view($breakpoint) {
+        display: none;
+    }
+}
+
+#content-section {
+
+    .faq-container {
+        margin-top: 15%;
+        padding: 0 80px 0 10px;
+
+        @include mobile-view($breakpoint) {
+            padding: 0 5%;
+        }
+    
+        h1 {
+            font-size: 32px;
+            color: $very-dark-grayish-blue;
+            margin-bottom: 30px;
+
+            @include mobile-view($breakpoint) {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+        }
+    
+        summary {
+            font-size: 14px;
+            padding: 1em 0;
+            margin-bottom: 1em;
+            cursor: pointer;
+            outline: none;
+            border-bottom: 1px solid $light-grayish-blue;
+            color: $dark-grayish-blue;        
+            position: relative;
+            list-style: none;               // Eliminates the marker for firefox
+    
+            // Eliminates the marker in chrome
+            &::-webkit-details-marker {
+                display: none;
+            }
+    
+            &:hover {
+                color: $soft-red;
+            }
+    
+            &::after {
+                content: '';
+                background: url(../images/icon-arrow-down.svg) no-repeat;
+                position: absolute;
+                right: 0;
+                top: 40%;
+                width: 10px;
+                height: 10px;
+            }
+        }
+    }
+
+    details[open] summary {
+        color: $very-dark-grayish-blue;
+        font-weight: $font-weight-bold;
+    }
+
+    details[open] summary::after {
+        background: url(../images/icon-arrow-up.svg) no-repeat;
+    }
+
+    details[open] summary ~ * {
+        animation: showOpen 0.5s ease-in-out;
+    }
+
+    .faq-answer {
+        margin-bottom: 1em;
+        color: $dark-grayish-blue;
+        width: 90%;
+    }
+}
+
+
+
+.attribution {
+    color: rgb(202, 202, 202);
+
+    a {
+        color: darken(rgb(202, 202, 202), 10%);
+
+        &:hover {
+            color: $soft-red;
+        }
+    }
+}
+
+// Animation when question opens
+
+@keyframes showOpen {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

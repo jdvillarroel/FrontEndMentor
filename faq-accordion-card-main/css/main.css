@@ -1,0 +1,242 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: -webkit-gradient(linear, left top, left bottom, from(#af67e9), to(#6565e7)) no-repeat;
+  background: linear-gradient(#af67e9, #6565e7) no-repeat;
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 12px;
+  width: 100%;
+  height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: 95% 5%;
+      grid-template-rows: 95% 5%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+}
+
+.container {
+  background-color: white;
+  width: 920px;
+  min-height: 510px;
+  border-radius: 20px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(460px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
+}
+
+@media screen and (max-width: 930px) {
+  .container {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 85px 1fr;
+        grid-template-rows: 85px 1fr;
+    width: 90%;
+    margin-top: 60px;
+  }
+}
+
+#illustration-section {
+  position: relative;
+}
+
+.illustration-container {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 930px) {
+  .illustration-container {
+    overflow: visible;
+  }
+}
+
+#illustration-bg-desktop {
+  position: absolute;
+  left: -123%;
+  top: -60%;
+}
+
+@media screen and (max-width: 930px) {
+  #illustration-bg-desktop {
+    display: none;
+  }
+}
+
+#illustration-desktop {
+  position: absolute;
+  top: 50%;
+  left: -17%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+@media screen and (max-width: 930px) {
+  #illustration-desktop {
+    display: none;
+  }
+}
+
+#illustration-bg-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 930px) {
+  #illustration-bg-mobile {
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+}
+
+#illustration-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 930px) {
+  #illustration-mobile {
+    display: inline-block;
+    position: absolute;
+    top: -120%;
+    left: 40%;
+    -webkit-transform: translateX(-40%);
+            transform: translateX(-40%);
+  }
+}
+
+#illustration-box-desktop {
+  position: absolute;
+  top: 41%;
+  left: -20%;
+}
+
+@media screen and (max-width: 930px) {
+  #illustration-box-desktop {
+    display: none;
+  }
+}
+
+#content-section .faq-container {
+  margin-top: 15%;
+  padding: 0 80px 0 10px;
+}
+
+@media screen and (max-width: 930px) {
+  #content-section .faq-container {
+    padding: 0 5%;
+  }
+}
+
+#content-section .faq-container h1 {
+  font-size: 32px;
+  color: #4a4b5e;
+  margin-bottom: 30px;
+}
+
+@media screen and (max-width: 930px) {
+  #content-section .faq-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+
+#content-section .faq-container summary {
+  font-size: 14px;
+  padding: 1em 0;
+  margin-bottom: 1em;
+  cursor: pointer;
+  outline: none;
+  border-bottom: 1px solid #e7e7e9;
+  color: #787887;
+  position: relative;
+  list-style: none;
+}
+
+#content-section .faq-container summary::-webkit-details-marker {
+  display: none;
+}
+
+#content-section .faq-container summary:hover {
+  color: #f47c57;
+}
+
+#content-section .faq-container summary::after {
+  content: '';
+  background: url(../images/icon-arrow-down.svg) no-repeat;
+  position: absolute;
+  right: 0;
+  top: 40%;
+  width: 10px;
+  height: 10px;
+}
+
+#content-section details[open] summary {
+  color: #4a4b5e;
+  font-weight: 700;
+}
+
+#content-section details[open] summary::after {
+  background: url(../images/icon-arrow-up.svg) no-repeat;
+}
+
+#content-section details[open] summary ~ * {
+  -webkit-animation: showOpen 0.5s ease-in-out;
+          animation: showOpen 0.5s ease-in-out;
+}
+
+#content-section .faq-answer {
+  margin-bottom: 1em;
+  color: #787887;
+  width: 90%;
+}
+
+.attribution {
+  color: #cacaca;
+}
+
+.attribution a {
+  color: #b1b1b1;
+}
+
+.attribution a:hover {
+  color: #f47c57;
+}
+
+@-webkit-keyframes showOpen {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes showOpen {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
