@@ -1,0 +1,169 @@
+:root {
+	--max-width: 1440px;
+	--mobile-width: 375px;
+	--bp-one: 600px;
+	--bp-two: 900px;
+
+	/* Color scheme */
+	--dark-cyan: hsl(185, 75%, 39%);
+	--very-dark-desaturated-blue: hsl(229, 23%, 23%);
+	--dark-grayish-blue: hsl(227, 10%, 46%);
+	--dark-gray: hsl(0, 0%, 59%);
+
+	/* Typography */
+	--main-font-size: 18px;
+	--regular: 400;
+	--bold: 700;
+	--main-font: "Kumbh Sans", sans-serif;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: var(--dark-cyan);
+	background-image: url(../images/bg-pattern-top.svg),
+		url(../images/bg-pattern-bottom.svg);
+	background-position: -260px -470px, bottom -600px right -200px;
+	background-repeat: no-repeat;
+	backdrop-filter: opacity(0.2);
+	position: relative;
+	font-family: var(--main-font);
+	color: var(--very-dark-desaturated-blue);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100vh;
+}
+
+h1,
+h2 {
+	font-size: var(--main-font-size);
+}
+
+p {
+	font-size: 16px;
+	color: var(--dark-grayish-blue);
+}
+
+/* card */
+.card {
+	width: 326px;
+	height: 374px;
+	position: relative;
+	border-radius: 10px;
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+}
+
+.card-header {
+	width: 100%;
+	height: 139px;
+	background: url(../images/bg-pattern-card.svg);
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+.profile-pic {
+	position: relative;
+}
+
+.profile-pic img {
+	width: 96px;
+	height: 96px;
+	border-radius: 50%;
+	position: absolute;
+	top: -47px;
+	left: 50%;
+	transform: translateX(-50%);
+	border: solid 5px white;
+}
+
+.card-body {
+	width: 100%;
+	height: 143px;
+	text-align: center;
+}
+
+.card-body h1 {
+	padding-top: 70px;
+}
+
+.card-body h1 span {
+	font-weight: 400;
+	color: var(--dark-grayish-blue);
+}
+
+.card-body p {
+	margin-top: 15px;
+	font-size: 14px;
+}
+
+.card-footer {
+	width: 100%;
+	height: 90px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	border-top: solid 1px rgba(150, 150, 150, 0.3);
+	padding: 0 30px;
+}
+
+.card-footer div {
+	text-align: center;
+}
+
+.followers {
+	flex: 1;
+}
+
+.likes {
+	flex: 1;
+}
+
+.photos {
+	flex: 1;
+}
+.card-footer p {
+	font-size: 11px;
+	margin-top: 8px;
+	letter-spacing: 2px;
+}
+
+.attribution {
+	font-size: 11px;
+	text-align: center;
+	color: rgb(230, 230, 230);
+	position: fixed;
+	bottom: 0;
+	height: 30px;
+}
+
+@media screen and (max-width: 769px) {
+	body {
+		background-position: -720px -600px, bottom -550px right -750px;
+	}
+}
+
+@media screen and (min-width: 770px) and (max-width: 1100px) {
+	body {
+		background-position: -580px -490px, bottom -550px right -500px;
+	}
+}
+
+@media screen and (min-width: 1101px) and (max-width: 1439px) {
+	body {
+		background-position: -350px -490px, bottom -550px right -350px;
+	}
+}
+
+@media screen and (min-width: 600px) {
+	.card {
+		width: 348px;
+	}
+}
