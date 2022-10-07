@@ -139,6 +139,7 @@ p {
   left: 0;
   right: 0;
   color: var(--very-dark-blue);
+  margin: 1rem;
 }
 .attribution a {
   /* color: hsl(228, 45%, 44%); */
