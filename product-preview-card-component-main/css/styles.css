@@ -147,7 +147,7 @@ p {
 }
 
 /* Mobile design */
-@media only screen and (max-width: 620px) {
+@media only screen and (max-width: 650px) {
   .tag {
     font-size: 0.92rem;
   }

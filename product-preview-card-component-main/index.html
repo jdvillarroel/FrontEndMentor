@@ -17,45 +17,53 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <div class="card">
-      <div class="card-img-container">
-        <img
-          class="card-img"
-          src="./images/image-product-desktop.jpg"
-          alt="card-image"
-        />
-      </div>
-
-      <div class="card-body">
-        <span class="tag">perfume</span>
-        <h2 class="card-title">Gabrielle Essence Eau De Parfum</h2>
-        <p class="card-description">
-          A floral, solar and voluptuous interpretation composed by Olivier
-          Polge, Perfumer-Creator for the House of CHANEL.
-        </p>
-        <div class="price-box">
-          <span class="price-primary">$169.99</span>
-          <span class="price-secondary">$149.99</span>
+    <main>
+      <article class="card">
+        <div class="card-img-container">
+          <picture>
+            <source
+              media="(max-width: 650px)"
+              srcset="./images/image-product-mobile.jpg"
+            />
+            <img
+              class="card-img"
+              src="./images/image-product-desktop.jpg"
+              alt="Gabrielle Perfume Bottle"
+            />
+          </picture>
         </div>
-        <button class="btn-cta">
-          <img
-            class="btn-cta-icon"
-            src="./images/icon-cart.svg"
-            alt="cart icon"
-          />
-          Add to Cart
-        </button>
-      </div>
-    </div>
 
-    <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by
-      <a href="https://github.com/jdvillarroel/FrontEndMentor" target="_blank"
-        >jdvillarroel</a
-      >.
-    </div>
+        <div class="card-body">
+          <span class="tag">perfume</span>
+          <h1 class="card-title">Gabrielle Essence Eau De Parfum</h1>
+          <p class="card-description">
+            A floral, solar and voluptuous interpretation composed by Olivier
+            Polge, Perfumer-Creator for the House of CHANEL.
+          </p>
+          <div class="price-box">
+            <del><span class="price-primary">$169.99</span></del>
+            <span class="price-secondary">$149.99</span>
+          </div>
+          <button class="btn-cta">
+            <img
+              class="btn-cta-icon"
+              src="./images/icon-cart.svg"
+              alt="cart icon"
+            />
+            Add to Cart
+          </button>
+        </div>
+      </article>
+
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by
+        <a href="https://github.com/jdvillarroel/FrontEndMentor" target="_blank"
+          >jdvillarroel</a
+        >.
+      </div>
+    </main>
   </body>
 </html>
