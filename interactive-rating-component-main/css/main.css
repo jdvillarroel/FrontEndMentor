@@ -214,7 +214,7 @@ body {
 
   .form-title {
     margin-top: 30px;
-    font-size: 1.6rem;
+    font-size: 1.7rem;
   }
 
   .radio-label {
@@ -235,5 +235,9 @@ body {
     width: 410px;
     height: 415px;
     padding: 40px 32px;
+  }
+
+  .sent-form-title {
+    font-size: 1.7rem;
   }
 }
