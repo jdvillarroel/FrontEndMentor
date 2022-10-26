@@ -1,0 +1,239 @@
+/* ********************************************************* */
+/* ******                Import Font               ********* */
+/* ********************************************************* */
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap");
+
+/* ********************************************************* */
+/* ******         Reset browser defaults           ********* */
+/* ********************************************************* */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ********************************************************* */
+/* ******                Variables                 ********* */
+/* ********************************************************* */
+:root {
+  --color-orange: hsl(25, 97%, 53%);
+  --color-light-grey: hsl(217, 12%, 63%);
+  --color-medium-grey: hsl(216, 12%, 54%);
+  --color-dark-blue: hsl(213, 19%, 18%);
+  --color-dark-blue-25: hsla(213, 20%, 18%, 0.664);
+  --color-very-dark-blue: hsl(216, 12%, 8%);
+
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+  --font-size-paragraph: 15px;
+
+  --radius-container: 10px;
+  --radius-container: 10px;
+}
+
+/* ********************************************************* */
+/* ******             Custom Styles                ********* */
+/* ********************************************************* */
+body {
+  background-color: var(--color-very-dark-blue);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: "Overpass";
+}
+
+#form-rating-section {
+  width: 330px;
+  height: 365px;
+  background-color: var(--color-dark-blue);
+  border-radius: var(--radius-container);
+  padding: 24px;
+  /* Just during development */
+  /* display: none; */
+}
+
+.icon-form {
+  width: 40px;
+  height: 40px;
+  background-color: hsla(217, 12%, 63%, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.form-title {
+  margin-bottom: 20px;
+}
+
+#form-rating p {
+  color: var(--color-medium-grey);
+  line-height: 1.4;
+  font-size: 15px;
+}
+
+.rating-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.radio {
+  display: none;
+}
+
+.radio:checked + .radio-label {
+  background-color: var(--color-orange);
+}
+
+.radio-label {
+  width: 40px;
+  height: 40px;
+  font-weight: var(--font-size-paragraph);
+  background-color: hsla(217, 12%, 63%, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.radio-label:hover {
+  background-color: var(--color-light-grey);
+}
+#btn-submit {
+  width: 100%;
+  height: 40px;
+  border-radius: 20px;
+  border-color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: var(--font-weight-bold);
+  background-color: var(--color-orange);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#btn-submit:hover {
+  background-color: white;
+  color: var(--color-orange);
+}
+
+/* Form Sent Section */
+#form-sent {
+  width: 330px;
+  height: 365px;
+  background-color: var(--color-dark-blue);
+  border-radius: var(--radius-container);
+  padding: 30px 24px;
+  text-align: center;
+  /* Just during development */
+  display: none;
+}
+
+.user-rating-container {
+  background-color: hsla(217, 12%, 63%, 0.15);
+  display: inline-block;
+  padding: 0.5rem 0.8rem;
+  border-radius: 20px;
+  margin: 20px auto;
+}
+
+.user-rating-container p {
+  font-size: 14px;
+  color: var(--color-orange);
+}
+
+.sent-form-title {
+  margin-bottom: 15px;
+}
+
+.sent-form-text {
+  color: var(--color-medium-grey);
+  line-height: 1.4;
+  font-size: 15px;
+}
+
+.btn-shake {
+  animation: shake 0.1s ease;
+  animation-iteration-count: 2;
+}
+
+/* Animation to indicate submittion failed because no selection was done */
+@keyframes shake {
+  0% {
+    transform: translate(2px, 0);
+  }
+  25% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-2px, 0);
+  }
+  75% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(2px, 0);
+  }
+}
+
+/* ********************************************************* */
+/* ****** Predefined component by FrontEnd Mentor  ********* */
+/* ********************************************************* */
+.attribution {
+  font-size: 12px;
+  text-align: center;
+  color: rgb(184, 184, 184);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0.5rem 0;
+}
+.attribution a {
+  color: hsl(228, 19%, 55%);
+}
+
+/* ********************************************************* */
+/* ******               Desktop Design             ********* */
+/* ********************************************************* */
+@media only screen and (min-width: 450px) {
+  #form-rating-section {
+    width: 410px;
+    height: 415px;
+    background-color: var(--color-dark-blue);
+    border-radius: var(--radius-container);
+    padding: 30px;
+  }
+
+  .form-title {
+    margin-top: 30px;
+    font-size: 1.6rem;
+  }
+
+  .radio-label {
+    width: 50px;
+    height: 50px;
+  }
+
+  .rating-container {
+    margin: 30px 0;
+  }
+
+  .user-rating-container {
+    padding: 0.6rem 1rem;
+    margin: 25px auto 30px auto;
+  }
+
+  #form-sent {
+    width: 410px;
+    height: 415px;
+    padding: 40px 32px;
+  }
+}
