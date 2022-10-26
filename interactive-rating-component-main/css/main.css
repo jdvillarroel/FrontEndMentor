@@ -207,8 +207,7 @@ body {
   #form-rating-section {
     width: 410px;
     height: 415px;
-    background-color: var(--color-dark-blue);
-    border-radius: var(--radius-container);
+    border-radius: 30px;
     padding: 30px;
   }
 
